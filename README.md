@@ -22,7 +22,7 @@ This repository includes implementations for the microprocessor labs at National
 
 ### Lab 5: C and Assembly Integration
 - **Focus**: Combine C with assembly for mathematical functions.
-- **Tasks**: Implement `ceil(sqrt(a))`, GCD, and signed multiplication functions.
+- **Tasks**: Implement ceil(sqrt(a)), GCD, and signed multiplication functions.
 
 ### Lab 6: LED Control and Button Debouncing
 - **Focus**: LED control, button debouncing, and handling input signals.
