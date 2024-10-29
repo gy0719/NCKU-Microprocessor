@@ -1,0 +1,60 @@
+List p=18f4520 
+    #include<p18f4520.inc>
+    CONFIG OSC = INTIO67
+    CONFIG WDT = OFF
+    org 0x00
+    LFSR 0, 0x100 ; FSR0 point to 0x100
+    LFSR 1, 0x100
+    LFSR 2, 0x100
+    MOVLW 0xFF ; WREG = 0x08
+    MOVWF POSTINC0 ;[0X100] = 0X08
+    
+    MOVLW 0xFE ; WREG = 0x08
+    MOVWF POSTINC0 ;[0X101] = 0X08
+    
+    MOVLW 0xFD ; WREG = 0x08
+    MOVWF POSTINC0 ;[0X102] = 0X08
+    
+    MOVLW 0xFC ; WREG = 0x08
+    MOVWF POSTINC0 ;[0X103] = 0X08
+    
+    MOVLW 0xFB ; WREG = 0x08
+    MOVWF POSTINC0 ;[0X104] = 0X08
+    
+    MOVLW 0xFA ; WREG = 0x08
+    MOVWF POSTINC0 ;[0X105] = 0X08
+    
+    MOVLW 0xF9 ; WREG = 0x08
+    MOVWF INDF0 ;[0X106] = 0X08
+    
+    MOVLW 0x06
+    MOVWF 0x00	;i
+    MOVWF 0x01	;j
+    
+    j:
+	MOVFF PREINC1,WREG  ;WREG = [FSR1++]
+	CPFSLT INDF2	;FSR1 < FSR2 ? swap, FSR2++ 
+	    GOTO swap
+	MOVLW 0x00
+	ADDWF POSTINC2,0    ;FSR2++
+	DECFSZ 0x01
+	    GOTO j
+	GOTO i
+	swap:
+	    MOVFF INDF2,INDF1
+	    MOVWF POSTINC2
+	    DECFSZ 0x01
+		GOTO j
+	    GOTO i
+    i:
+	MOVLW 0x06
+	MOVWF 0x01
+	LFSR 1, 0x100
+	LFSR 2, 0x100
+	DECFSZ 0x00
+		GOTO j
+	GOTO exit
+    exit:
+    end
+
+
