@@ -1,0 +1,58 @@
+List p=18f4520 
+    #include<p18f4520.inc>
+    CONFIG OSC = INTIO67
+    CONFIG WDT = OFF
+    org 0x00 ;PC = 0x00
+    CLRF 0x20
+    CLRF 0x21
+    CLRF 0x22
+    CLRF 0x23
+    
+    MOVLW 0xFF
+    MOVWF 0x00	
+    MOVLW 0xFF
+    MOVWF 0x01	;multiplicand
+   
+    MOVLW 0xF0
+    MOVWF 0x10
+    MOVLW 0xF0
+    MOVWF 0x11	;multiplier
+    
+    MOVFF 0x11,WREG
+    MULWF 0x01	;[0x01]*[0x11]
+    MOVFF PRODL,WREG
+    ADDWF 0x23
+    MOVFF PRODH,WREG
+    ADDWF 0x22
+    
+    MOVFF 0x11,WREG
+    MULWF 0x00	;[0x00]*[0x11]
+    MOVFF PRODL,WREG	
+    ADDWF 0x22	
+    BTFSC STATUS,C
+	INCF 0x21
+    MOVFF PRODH,WREG
+    ADDWF 0x21
+    
+    MOVFF 0x10,WREG
+    MULWF 0x01	;[0x01]*[0x10]
+    MOVFF PRODL,WREG	
+    ADDWF 0x22	
+    BTFSC STATUS,C
+	INCF 0x21
+    MOVFF PRODH,WREG
+    ADDWF 0x21
+    BTFSC STATUS,C
+	INCF 0x20
+	
+    MOVFF 0x10,WREG
+    MULWF 0x00	;[0x00]*[0x10]
+    MOVFF PRODL,WREG	
+    ADDWF 0x21	
+    BTFSC STATUS,C
+	INCF 0x20
+    MOVFF PRODH,WREG
+    ADDWF 0x20
+    end
+
+
