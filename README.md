@@ -27,3 +27,7 @@ This repository includes implementations for the microprocessor labs at National
 ### Lab 6: LED Control and Button Debouncing
 - **Focus**: LED control, button debouncing, and handling input signals.
 - **Tasks**: Control LED states, resolve button bounce issues, create responsive patterns.
+
+### Lab 7: Interrupt-Driven LED Control and Timer-Based Patterns
+- **Focus**: Utilize interrupts and timers for advanced LED control and state-based functionality.
+- **Tasks**: Toggle LED states, implement a cyclic counter with timers, and add multi-state patterns controlled by a button.
