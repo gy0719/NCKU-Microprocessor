@@ -27,4 +27,3 @@ This repository includes implementations for the microprocessor labs at National
 ### Lab 6: LED Control and Button Debouncing
 - **Focus**: LED control, button debouncing, and handling input signals.
 - **Tasks**: Control LED states, resolve button bounce issues, create responsive patterns.
-  
