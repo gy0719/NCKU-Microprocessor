@@ -31,3 +31,7 @@ This repository includes implementations for the microprocessor labs at National
 ### Lab 7: Interrupt-Driven LED Control and Timer-Based Patterns
 - **Focus**: Utilize interrupts and timers for advanced LED control and state-based functionality.
 - **Tasks**: Toggle LED states, implement a cyclic counter with timers, and add multi-state patterns controlled by a button.
+
+### Lab 8: Motor Control with CCP Module
+- **Focus**: Utilize the Capture/Compare/PWM (CCP) module for motor control using button input and PWM configuration.
+- **Tasks**: Control motor rotation between -90° and +90°, implement smooth transitions for intermediate positions, and create continuous motion loops.
