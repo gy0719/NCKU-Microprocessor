@@ -35,3 +35,11 @@ This repository includes implementations for the microprocessor labs at National
 ### Lab 8: Motor Control with CCP Module
 - **Focus**: Utilize the Capture/Compare/PWM (CCP) module for motor control using button input and PWM configuration.
 - **Tasks**: Control motor rotation between -90° and +90°, implement smooth transitions for intermediate positions, and create continuous motion loops.
+
+### Lab 9: Analog-to-Digital Conversion (ADC)  
+- **Focus**: Use ADC to process resistor input and control LEDs.  
+- **Tasks**: Display part of your student ID, show odd/even binary numbers, and adjust LED brightness using PWM based on resistor input.  
+
+### Lab 10: UART Communication and Control  
+- **Focus**: Implement UART communication to interact with hardware using serial input and output.  
+- **Tasks**: Verify UART functionality, echo keyboard input on a terminal, light LEDs for numbers (0–9), and create a button-controlled cyclic LED counter.  
